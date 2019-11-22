@@ -40,12 +40,12 @@ public class MyComplex {
     }
 
     public boolean isReal(){
-        if((real == 0)&&(imag != 0)) return false;
+        if((Double.compare(real, 0) == 0)&&(Double.compare(imag, 0) != 0)) return false;
         return true;
     }
 
     public boolean isImaginary(){
-        if(imag == 0) return false;
+        if(Double.compare(imag, 0) == 0) return false;
         return true;
     }
 
@@ -99,7 +99,7 @@ public class MyComplex {
     }
 
     public boolean equals(double real, double imag) {
-        return (this.real == real) && (this.imag == imag);
+        return (Double.compare(this.real, real) == 0) && (Double.compare(this.imag, imag) == 0);
     }
 
     @Override
@@ -121,9 +121,9 @@ public class MyComplex {
 
     @Override
     public String toString() {
-        if((real == 0)&&(imag == 0)) return "(0)";
-        if((real == 0)&&(imag != 0)) return "(" + imag + "i)";
-        if((real != 0)&&(imag == 0)) return "(" + real + ")";
+        if((Double.compare(real, 0) == 0)&&(Double.compare(imag, 0) == 0)) return "(0)";
+        if((Double.compare(real, 0) == 0)&&(Double.compare(imag, 0) != 0)) return "(" + imag + "i)";
+        if((Double.compare(real, 0) != 0)&&(Double.compare(imag, 0) == 0)) return "(" + real + ")";
         return "(" + real + " + (" + imag + ")i)";
     }
 }
