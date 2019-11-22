@@ -22,8 +22,8 @@ public class Triangle {
     }
 
     public String getType(){
-        if((v1.distance(v2) == v2.distance(v3)) &&(v2.distance(v3) == v3.distance(v1))) return "equilateral";
-        if((v1.distance(v2) == v1.distance(v3)) ||(v2.distance(v1) == v2.distance(v3))||(v3.distance(v1) == v3.distance(v2))) return "isosceles";
+        if(Double.compare(v1.distance(v2), v2.distance(v3)) == 0)) &&(Double.compare(v2.distance(v3), v3.distance(v1)) == 0)) return "equilateral";
+        if(Double.compare(v1.distance(v2), v1.distance(v3)) == 0)) ||(Double.compare(v2.distance(v3), v2.distance(v1)) == 0))||(Double.compare(v3.distance(v2), v3.distance(v1)) == 0))) return "isosceles";
         return "scalene";
     }
 
